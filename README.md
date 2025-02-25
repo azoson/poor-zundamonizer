@@ -2,7 +2,7 @@
 
 Marp　の presenter notes を利用して、「ずんだもんと春日部つむぎの音声付きのスライド発表」らしきものを作成する。
 
-```
+```markdown
 # Slide 1
 
 - hoge
@@ -10,8 +10,18 @@ Marp　の presenter notes を利用して、「ずんだもんと春日部つ�
 
 <!-- ずんだもん(newutral): こんにちは、ずんだもんです -->
 <!-- 春日部つむぎ(happy): 私は春日部つむぎです -->
+<!-- ↑ ここが音声になる -->
 
 ```
+
+## デモ
+
+```sh
+bun index.ts demo/demo.md demo-test
+cp demo/images/* demo-test/images/
+# Markdown 内で参照している画像をよしなに移動する必要がある
+```
+
 
 ## 利用
 
@@ -43,8 +53,13 @@ Marpit　の Presenter Notes を元に音声を生成し、 `audios` ディレ�
 
 ## 画像
 
-ずんだもんと春日部つむぎそれぞれについて、 `["neutral", "happy", "sad", "angry", "surprised", "thinking"]` の 6 つの表情画像を `images` ディレクトリに配置する。
+ずんだもんと春日部つむぎそれぞれについて、 `["neutral", "happy", "sad", "angry", "thinking"]` の 6 つの表情画像を `images` ディレクトリに配置する。
 これらの画像は `poor-zundamonizer.js` で参照される。
+
+一旦（再配布を避けた方が良いかと勝手に思ったため）、poor な ずんだもん・春日部つむぎ の画像を用意している。
+rich にしたい場合は 坂本アヒル 先生の有名な画像群を使うと良い:
+- [ずんだもん立ち絵素材](https://www.pixiv.net/artworks/92641351)
+- [春日部つむぎ立ち絵素材](https://www.pixiv.net/artworks/95429376)
 
 ## スライド発表らしきものの再生
 
@@ -63,7 +78,6 @@ type Event =
         | "happy"
         | "sad"
         | "angry"
-        | "surprised"
         | "thinking";
       text: string;
     };

@@ -7,5 +7,10 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
-  }
+  },
+  "dependencies": {
+    "@marp-team/marp-core": "^4.0.1",
+    "@marp-team/marpit": "^3.1.2"
+  },
+  "license": "MIT"
 }
